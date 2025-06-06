@@ -1,0 +1,147 @@
+﻿body {
+  font-family: 'Roboto', sans-serif;
+  margin: 2rem;
+  background-color: #fafafa;
+  color: #222;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode #scrollToTopBtn md-icon {
+  color: #ffffff;
+}
+
+/* Light mode (default) */
+.arrow-button {
+  color: #333;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* Placeholder for inputs */
+::placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+/* Dark mode styles */
+body.dark-theme {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-theme .arrow-button {
+  color: #f0f0f0;
+}
+
+body.dark-theme ::placeholder {
+  color: #bbb;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.country-section {
+  margin-bottom: 48px;
+}
+
+.country-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+md-elevated-card {
+  min-width: 280px;
+  min-height: 360px;
+  flex: 0 0 auto; /* prevent shrinking */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  background-color: white;
+  color: inherit;
+}
+
+md-elevated-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.listing-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.listing-detail {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.listing-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: #fbc02d;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.arrows {
+  display: flex;
+  gap: 8px;
+}
+
+md-icon-button {
+  --md-icon-button-size: 36px;
+  --md-icon-button-hover-background-color: #e0e0e0;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ddd;
+}
+
+body.dark md-elevated-card {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+body.dark .listing-detail,
+body.dark .listing-meta {
+  color: #bbb;
+}

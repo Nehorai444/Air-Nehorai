@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Air Nehorai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png" />
+
+  <!-- Material Web via ESM -->
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module" src="main.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="md-typescale-headline-small">Air Nehorai</h1>
+
+    <div class="filters">
+      <md-outlined-text-field id="filterTitle" label="Filter by Title" type="text" style="width: 250px;">
+        <md-icon slot="leading-icon">search</md-icon>
+      </md-outlined-text-field>
+
+      <md-outlined-text-field id="filterPrice" label="Max Price ($)" type="number" style="width: 150px;">
+        <md-icon slot="leading-icon">attach_money</md-icon>
+      </md-outlined-text-field>
+
+      <md-outlined-select id="sortSelect" label="Sort by" style="width: 200px;">
+          <md-select-option value="price-asc">Price: Low to High</md-select-option>
+          <md-select-option value="price-desc">Price: High to Low</md-select-option>
+          <md-select-option value="title-asc">Title: A–Z</md-select-option>
+        </md-outlined-select>
+
+      <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+        <md-switch id="darkModeToggle"></md-switch>
+        <span id="darkModeLabel">Dark Mode</span>
+      </label>
+    </div>
+  </header>
+  <!-- Scroll to Top FAB -->
+  <md-fab id="scrollToTopBtn" style="position: fixed; bottom: 24px; right: 24px; display: none; z-index: 999;">
+    <md-icon>arrow_upward</md-icon>
+  </md-fab>
+
+  <main id="countryListings"></main>
+  <script type="module">
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+
+    // Show the button when user scrolls down
+    window.addEventListener("scroll", () => {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    // Scroll to top smoothly when clicked
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+
+</html>
